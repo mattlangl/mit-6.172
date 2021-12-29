@@ -133,6 +133,9 @@ int main(int argc, char** argv) {
   fasttime_t time1 = gettime();
   matrix_multiply_run(A, B, C);
   fasttime_t time2 = gettime();
+  free_matrix(A);
+  free_matrix(B);
+  free_matrix(C);
 
   if (should_print) {
     printf("---- RESULTS ----\n");
