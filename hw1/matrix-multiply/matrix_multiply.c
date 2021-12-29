@@ -48,7 +48,7 @@ matrix* make_matrix(int rows, int cols) {
   for (int i = 0; i < rows; i++) {
     new_matrix->values[i] = (int*)malloc(sizeof(int) * cols);
     for(int j = 0; j < cols; j++) {
-      new_matrix->values[i][j] = 0;
+        new_matrix->values[i][j] = 0;
     }
   }
 
@@ -89,8 +89,8 @@ int matrix_multiply_run(const matrix* A, const matrix* B, matrix* C) {
 
 
   for (int i = 0; i < A->rows; i++) {
-    for (int j = 0; j < B->cols; j++) {
-      for (int k = 0; k < A->cols; k++) {
+    for (int k = 0; k < A->cols; k++) {
+      for (int j = 0; j < B->cols; j++) {
         C->values[i][j] += A->values[i][k] * B->values[k][j];
       }
     }
